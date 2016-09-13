@@ -56,6 +56,18 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var HelloWorld = _react2.default.createClass({
+	  displayName: 'HelloWorld',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'p',
+	      null,
+	      'Hello!'
+	    );
+	  }
+	});
+
 	var App = _react2.default.createClass({
 	  displayName: 'App',
 
@@ -104,7 +116,7 @@
 	      _react2.default.createElement('input', { type: 'text', ref: 'query' }),
 	      _react2.default.createElement(
 	        'select',
-	        { ref: 'catagory' },
+	        { ref: 'category' },
 	        _react2.default.createElement(
 	          'option',
 	          { value: 'software' },
@@ -156,7 +168,12 @@
 	  }
 	});
 
-	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById("container"));
+	_reactDom2.default.render(_react2.default.createElement(
+	  'div',
+	  null,
+	  _react2.default.createElement(HelloWorld, null),
+	  _react2.default.createElement(App, null)
+	), document.querySelector("#container"));
 
 /***/ },
 /* 1 */
