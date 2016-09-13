@@ -1,6 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
- 
+
+var HelloWorld = React.createClass({
+  render: function() {
+  return (
+    <p>Hello!</p>
+  );
+  }
+});
+
 var App = React.createClass({
 
   getInitialState: function() {
@@ -33,7 +41,7 @@ var App = React.createClass({
         <Results searchResults={this.state.searchResults} />
       </div>
     );
-  }
+  },
 
 });
 
@@ -79,6 +87,11 @@ var ResultItem = React.createClass({
   }
 });
 
-
-ReactDOM.render(<App />, document.getElementById("container"));
+ReactDOM.render(
+  <div>
+    <HelloWorld/>
+    <App />
+  </div>, 
+  document.querySelector("#container")
+);
 
